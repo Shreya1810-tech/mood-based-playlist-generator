@@ -1,0 +1,194 @@
+.fav-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(12px);
+  z-index: 5000;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.fav-panel {
+  width: 100%;
+  max-width: 700px;
+  max-height: 78vh;
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0 !important;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.fav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4rem 1.5rem 1rem;
+  border-bottom: 1px solid var(--mood-border);
+  flex-shrink: 0;
+}
+
+.fav-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.fav-title { font-size: 1.05rem; font-weight: 700; }
+
+.fav-count {
+  font-size: 0.72rem;
+  font-weight: 600;
+  background: #ef4444;
+  color: white;
+  padding: 1px 7px;
+  border-radius: var(--radius-full);
+}
+
+.fav-close {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--mood-text-muted);
+  transition: all 0.2s ease;
+}
+.fav-close:hover { background: rgba(255,255,255,0.08); color: var(--mood-text); }
+
+.fav-empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  text-align: center;
+  color: var(--mood-text-secondary);
+  font-size: 0.9rem;
+}
+
+.fav-empty-hint {
+  font-size: 0.78rem;
+  color: var(--mood-text-muted);
+  margin-top: 0.3rem;
+}
+
+.fav-grid {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.fav-card {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.7rem 0.8rem;
+  border-radius: var(--radius-md);
+  background: rgba(255,255,255,0.03);
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.fav-card:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.06);
+}
+
+.fav-cover {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: rgba(255,255,255,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.fav-cover-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.fav-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.fav-track-title {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--mood-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fav-track-artist {
+  font-size: 0.75rem;
+  color: var(--mood-text-muted);
+}
+
+.fav-track-duration {
+  font-size: 0.7rem;
+  color: var(--mood-text-muted);
+  margin-top: 2px;
+}
+
+/* Contextual actions — revealed on hover */
+.fav-actions {
+  display: flex;
+  gap: 0.3rem;
+  opacity: 0;
+  transform: translateX(8px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.fav-card:hover .fav-actions {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ── Fav button states ── */
+.fav-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.18s ease;
+  cursor: pointer;
+}
+
+/* Default */
+.fav-btn { background: rgba(255,255,255,0.06); color: var(--mood-text-muted); }
+/* Hover */
+.fav-btn:hover { background: rgba(255,255,255,0.12); color: var(--mood-text); }
+/* Active */
+.fav-btn:active { transform: scale(0.9); }
+/* Focus */
+.fav-btn:focus-visible { outline: 2px solid var(--mood-accent); outline-offset: 2px; }
+/* Disabled */
+.fav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+.fav-btn--queue:hover  { color: var(--mood-primary); background: color-mix(in srgb, var(--mood-primary) 15%, transparent); }
+.fav-btn--remove:hover { color: #ef4444; background: rgba(239,68,68,0.12); }

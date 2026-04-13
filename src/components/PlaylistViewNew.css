@@ -1,0 +1,126 @@
+/* ── Extra PlaylistView styles for new features ── */
+
+/* No results */
+.no-results {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  color: var(--mood-text-muted);
+  font-size: 0.88rem;
+}
+
+/* Visualizer inside now-playing */
+.np-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.np-visualizer {
+  width: 130px;
+}
+
+/* Track actions — contextual reveal on hover */
+.track-card .track-actions {
+  opacity: 0;
+  transform: translateX(6px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.track-card:hover .track-actions,
+.track-card:focus-within .track-actions {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Queue action button */
+.track-action-btn--queue:hover {
+  color: var(--mood-primary);
+  background: color-mix(in srgb, var(--mood-primary) 12%, transparent);
+}
+
+/* ── Button state system (5 states) applied to icon-btn ── */
+
+/* Default */
+.icon-btn {
+  background: var(--mood-surface);
+  border: 1px solid var(--mood-border);
+  color: var(--mood-text-secondary);
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s cubic-bezier(0.23,1,0.32,1);
+  font-family: var(--font-body);
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  position: relative;
+}
+
+/* Hover */
+.icon-btn:hover {
+  background: var(--mood-surface-hover);
+  color: var(--mood-text);
+  border-color: var(--mood-primary);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px var(--mood-glow);
+}
+
+/* Active/pressed */
+.icon-btn:active {
+  transform: scale(0.92) translateY(0);
+  box-shadow: none;
+}
+
+/* Focus */
+.icon-btn:focus-visible {
+  outline: 2px solid var(--mood-accent);
+  outline-offset: 2px;
+}
+
+/* Disabled */
+.icon-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Loading state — add class 'loading' */
+.icon-btn.loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.icon-btn.loading::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: var(--mood-primary);
+  animation: iconSpin 0.7s linear infinite;
+}
+
+@keyframes iconSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* Topbar spacing for more buttons */
+.topbar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  justify-content: flex-end;
+  max-width: calc(100% - 60px);
+}
+
+@media (max-width: 600px) {
+  .np-visualizer { display: none; }
+  .np-right { gap: 0.3rem; }
+  .topbar-actions { gap: 0.25rem; }
+  .icon-btn { width: 30px; height: 30px; }
+}

@@ -1,0 +1,13 @@
+.visualizer-wrap {
+  width: 100%;
+  height: 56px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.visualizer-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
