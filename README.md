@@ -1,16 +1,41 @@
-# React + Vite
+# 🎧 MoodWave — Emotion-Based Music Playlist Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+MoodWave is a modern, interactive web application that creates personalized music playlists based on the user’s emotional state. Instead of searching for songs manually, users simply express how they feel, and the system generates a playlist tailored to that mood.
 
-Currently, two official plugins are available:
+🔗 Live Demo: https://moodwavee.netlify.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+MoodWave is designed to provide a smooth and immersive user experience through emotion-driven interaction.
 
-## Expanding the ESLint configuration
+Some key features are:
+- 🎭 Mood selection using predefined options or custom input  
+- 🎶 Dynamic playlist generation based on user emotion  
+- ▶️ Interactive music player (Play, Pause, Next, Shuffle, Like)  
+- ❤️ Save and manage liked songs  
+- 📊 User stats and listening insights  
+- ➕ Add custom songs to playlists  
+- 🔄 Regenerate playlists for the same mood  
+- 🎨 Smooth animations and visually rich UI  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tech Stack
+
+The application is built using modern frontend technologies to ensure performance and scalability.
+
+- **Frontend Framework:** React  
+- **Build Tool:** Vite  
+- **Styling:** CSS (custom animations + responsive design)  
+- **UI/UX Enhancement:** Antigravity AI (for design inspiration and refinement)  
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/your-username/moodwave.git
+cd moodwave
