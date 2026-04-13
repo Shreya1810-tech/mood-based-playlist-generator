@@ -1,0 +1,9 @@
+/* ========================================
+   App Container Styles
+   ======================================== */
+
+.app-container {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
